@@ -1,0 +1,29 @@
+---
+# tasks file for roles/docker
+
+- name: Adding the Docker repo
+  yum_repository:
+    name: docker-ce-stable
+    description: Docker CE Stable Repository
+    baseurl: https://download.docker.com/linux/centos/$releasever/$basearch/stable
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://download.docker.com/linux/centos/gpg
+
+
+- name: Installing Docker
+  package:
+    name: "{{ docker_packages }}"
+    state: present
+
+
+- name: Starting the Docker Service
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Install Python Dependencies
+  package:
+    name: "{{ python_dependencies }}"
+    state: present

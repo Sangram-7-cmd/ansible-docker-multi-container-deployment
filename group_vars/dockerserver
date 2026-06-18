@@ -1,0 +1,15 @@
+containers:
+  - name: nginx
+    image: nginx
+    port: 
+      - 8080:80
+    volumes:
+      - /srv/nginx/html:/usr/share/nginx/html
+
+  - name: redis
+    image: redis
+    port:
+      - 6379:6379
+    env:
+      REDIS_PASSWORD: supersecret123
+      REDIS_USER: admin
