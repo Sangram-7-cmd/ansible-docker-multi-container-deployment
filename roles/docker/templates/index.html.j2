@@ -1,5 +1,23 @@
-<h1>Welcome to {{ inventory_hostname }}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible Docker Deployment</title>
+</head>
+<body>
 
-<p>Environment: Production</p>
+    <h1>Ansible Docker Multi-Container Deployment</h1>
 
-<p>Managed by Ansible</p>
+    <h2>Server: {{ inventory_hostname }}</h2>
+
+    <p><strong>Environment:</strong> Production</p>
+
+    <p><strong>Managed by:</strong> Ansible</p>
+
+    <p><strong>Container:</strong> Nginx</p>
+
+    <hr>
+
+    <p>This page was deployed automatically using Ansible.</p>
+
+</body>
+</html>
